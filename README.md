@@ -40,4 +40,5 @@ This is the story of a developer who would like to become a hacker
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" width=50/>
     <img src="https://cdn.freebiesupply.com/logos/large/2x/eclipse-11-logo-svg-vector.svg" width=50/>
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" width=50/>
+    <img src="https://media.discordapp.net/attachments/837345074877562892/1174067335246643301/rabbitmq.png" width=50/>
 </p>
