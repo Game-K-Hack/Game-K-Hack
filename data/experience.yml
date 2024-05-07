@@ -1,0 +1,28 @@
+experience:
+- start_date: 22 Janvier
+  end_date: 25 Janvier, 2018
+  type: Stage découverte 3<sup>ème</sup> BTS SIO
+  company: Airbus
+  place: Bouguenais
+  info: (Découverte de tous les secteurs)
+- start_date: 23 Mai
+  end_date: 25 Juin, 2022
+  type: Stage 1<sup>ère</sup> année BTS SIO
+  company: Sodebo
+  place: Montaigu-Vendée
+  info: "
+    - Modification d'application web (pour la production) en <strong>Angular</strong><br>
+    - Création de matrice de tests sur <strong>Squash</strong><br>
+    - Création d’interfaces pour un projet de gestion de fournitures sous <strong>Angular</strong><br>
+    - Réalisation d’un test de <strong>sécurité informatique</strong>"
+- start_date: 3 Janvier
+  end_date: 17 Février, 2023
+  type: Stage 2<sup>ème</sup> année BTS SIO
+  company: Sodebo
+  place: Montaigu-Vendée
+  info: "
+    - Création de fichiers de <strong>configuration GitLab-CI</strong> pour la migration de projets<br>
+    - Création d’API via <strong>Gravitee</strong><br>
+    - Création d’un <strong>script Python</strong> pour transférer des dépendances<br>
+    - Création de requêtes d’alert <strong>RabbitMQ sur Prometheus</strong><br>
+    - Création de graphiques d’alert <strong>RabbitMQ sur Graphana</strong>"

@@ -1,0 +1,16 @@
+study:
+- start_year: 2023
+  end_year: 2024
+  name: Licence Informatique - Développeur
+  info:
+  place: À La Joliverie (Saint-Sébastien-sur-Loire)
+- start_year: 2021
+  end_year: 2023
+  name: BTS - Services informatiques aux organisations
+  info:
+  place: À La Joliverie (Saint-Sébastien-sur-Loire)
+- start_year: 2020
+  end_year: 2021
+  name: BAC - STI2D (Sciences et technologies de l'industrie et du développement durable)
+  info: Option SIN (Système d’Information et Numérique)
+  place: À Jean-Perrin (Rezé)
