@@ -1,8 +1,8 @@
 skill:
   language:
     - name: Python
-      src: ./images/python.png
-      percent: 95
+      src: images/skillpage/python.png
+      percent: 90
       height: 62em
       color: red
       desc: Voici les librairie que j'utilise pour mes différent projets Python.<br>
@@ -54,147 +54,177 @@ skill:
             Vous pouvez retrouver certains projets sur mon 
             <a onclick="window.open('https://github.com/Game-K-Hack', '_blank').focus();" class="link"><strong>GitHub</strong></a>
     - name: Java
-      src: ./images/java.png
+      src: images/skillpage/java.png
       percent: 60
-      height: 14em
+      height: 16em
       color: red
-      desc: Expérience approfondie en Java, développement d'applications Android en utilisant Android Studio. Maîtrise de la création d'interfaces graphiques attrayantes et de la connexion à des bases de données pour une fonctionnalité complète.
+      desc: Expérience approfondie en Java, développement d'applications Android en utilisant Android Studio. Maîtrise de la création d'interfaces graphiques attrayantes et de la connexion à des bases de données pour une fonctionnalité complète. J'ai également une solide expérience d'un an en développement backend avec Spring Boot.
     - name: HTML
-      src: ./images/html.png
+      src: images/skillpage/html.png
       percent: 80
       height: 11.5em
       color: red
       desc: Maîtrise des balises HTML essentielles et compétence avérée dans leur utilisation adéquate pour créer des sites web structurés.
     - name: CSS
-      src: ./images/css.png
-      percent: 20
+      src: images/skillpage/css.png
+      percent: 40
       color: red
       desc: Compétences de base en CSS, continuellement renforcées grâce à une exploration constante des ressources en ligne.
       height: 11.5em
     - name: JavaScript
-      src: ./images/Javascript.png
-      percent: 40
+      src: images/skillpage/javascript.png
+      percent: 60
       height: 12.5em
       color: red
       desc: Maîtrise du JavaScript côté navigateur web permettant d'extraire des données d'un site, de développer des extensions et de manipuler du code HTML.
     - name: TypeScript
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg
-      percent: 40
-      height: 12.5em
-      color: red
-      desc: Maîtrise du JavaScript côté navigateur web permettant d'extraire des données d'un site, de développer des extensions et de manipuler du code HTML.
-    - name: PHP
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg
+      src: images/skillpage/typescript.svg
       percent: 60
+      height: 9.5em
+      color: red
+      desc: Maîtrise du TypeScript avec le framework Angular
+    - name: PHP
+      src: images/skillpage/php.png
+      percent: 40
       height: 12.5em
       color: red
       desc: Maîtrise des concepts fondamentaux de PHP, ainsi qu'une connaissance approfondie des failles potentielles du langage et des techniques pour les corriger.
     - name: Arduino
-      src: ./images/arduino.png
+      src: images/skillpage/arduino.png
       percent: 30
       height: 14em
       color: red
       desc: Compétences en Arduino comprenant le contrôle de servomoteurs, de LED et de boutons, ainsi qu'une expérience en électronique. J'ai également programmé des afficheurs et je possède une solide compréhension des bases de la programmation.
     - name: MySQL
-      src: ./images/mysql.png
+      src: images/skillpage/mysql.png
       percent: 70
       height: 11.5em
       color: red
       desc: Je possède une expertise en SQL comprenant la maîtrise des injections SQL ainsi qu'une solide maîtrise des fonctions essentielles de SQL.
     - name: Angular
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg
-      percent: 10
-      height: 10em
+      src: images/skillpage/angular.svg
+      percent: 70
+      height: 11.5em
       color: red
-      desc: Description
+      desc: Un an d'expérience en Angular durant mon alternance, où j'ai développé des applications web dynamiques et intégrées avec des API backend.
     - name: NodeJS
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg
-      percent: 40
-      height: 10em
+      src: images/skillpage/nodejs.svg
+      percent: 60
+      height: 10.5em
       color: red
-      desc: Description
+      desc: Expérience en Node.js avec du développement backend et la création de scripts d'automatisation.
+    - name: Spring Tools
+      src: images/skillpage/spring.svg
+      percent: 50
+      height: 12.5em
+      color: red
+      desc: Expérience acquise lors de mon alternance en modification d'applications Java Spring et en création de tests unitaires. Compétences de base dans l'utilisation de Spring Tools.
   tool:
     - name: VSCode
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg
+      src: images/skillpage/vscode.svg
       percent: 90
       height: 11.6em
       color: red
       desc: Utilisation quotidienne avec expertise avancée. Intégration d'extensions comme SonarLint pour maintenir la qualité du code.
     - name: Grafana
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg
-      percent: 80
+      src: images/skillpage/grafana.svg
+      percent: 70
       height: 12.6em
       color: red
       desc: Expérience approfondie lors de mon stage, avec la création de graphiques et d'indicateurs à partir de requêtes Prometheus, intégrant des données provenant de queues RabbitMQ.
     - name: Android Studio
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg
+      src: images/skillpage/androidstudio.svg
       percent: 30
       height: 14.8em
       color: red
       desc: Utilisation lors de cours pour développer une application en Java. Compétences de base, notamment dans la navigation dans l'explorateur de fichier, le lancement d'émulateur, et le débogage. Cependant, une compréhension limitée de l'interface et des paramètres de l'IDE.
     - name: Jira
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg
-      percent: 50
+      src: images/skillpage/jira.svg
+      percent: 70
       height: 14.7em
       color: red
       desc: Utilisation régulière pour la gestion des tickets assignés, création et attribution de tickets, ainsi que la modification de leur statut. Capacité à créer des workflows personnalisés avec différents droits et à générer des tableaux pour une vue d'ensemble.
     - name: Git
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg
+      src: images/skillpage/git.svg
       percent: 80
       height: 14.7em
       color: red
       desc: Une utilisation quotidienne avec une expertise marquée dans les commandes fondamentales telles que clone, add, commit, pull, push et merge. J'ai également recours de manière occasionnelle aux commandes reset et rebase pour des exigences spécifiques.
     - name: GitHub
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg
-      percent: 60
+      src: images/skillpage/github.svg
+      percent: 80
       height: 12.7em
       color: red
       desc: Expérience solide avec GitHub, couvrant divers aspects de la gestion de code, des fusions, des modifications de code, de la création de projets, etc.
     - name: GitLab
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg
-      percent: 70
+      src: images/skillpage/gitlab.svg
+      percent: 90
       height: 13.7em
       color: red
       desc: Compétences solides dans l'utilisation de GitLab, couvrant les aspects essentiels de la gestion de code, des fusions, du suivi des statuts, du redémarrage des pipelines, de la création de projets, etc.
-    - name: Spring Tools
-      src: https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg
-      percent: 50
-      height: 12.5em
-      color: red
-      desc: Expérience acquise lors de mon alternance en modification d'applications Java Spring et en création de tests unitaires. Compétences de base dans l'utilisation de Spring Tools.
     - name: RabbitMQ
-      src: https://camo.githubusercontent.com/576a13761ee88508a248a9974f4becd9504e2ad0780d45d7774680f917875d47/68747470733a2f2f6d656469612e646973636f72646170702e6e65742f6174746163686d656e74732f3833373334353037343837373536323839322f313137343036373333353234363634333330312f7261626269746d712e706e67
-      percent: 40
+      src: images/skillpage/rabbitmq.svg
+      percent: 60
       height: 13.5em
       color: red
       desc: Compréhension de base du fonctionnement de RabbitMQ, incluant la création de requêtes Prometheus via des queues RabbitMQ. Connaissances limitées dans la création et la gestion de queues RabbitMQ.
     - name: Eclipse
-      src: https://camo.githubusercontent.com/32d2e8adeca3618edbbd2a178516b5d7c17e73102ef355505b6eeec50f39c284/68747470733a2f2f63646e2e66726565626965737570706c792e636f6d2f6c6f676f732f6c617267652f32782f65636c697073652d31312d6c6f676f2d7376672d766563746f722e737667
-      percent: 10
-      height: 10em
+      src: images/skillpage/eclipse.svg
+      percent: 40
+      height: 10.5em
       color: red
-      desc: Description
+      desc: IDE utilisé tout au long de mon alternance pour développer des applications Java Spring Boot.
     - name: NetBeans
-      src: https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Apache_NetBeans_Logo.svg/444px-Apache_NetBeans_Logo.svg.png?20180920122700
+      src: images/skillpage/netbeans.png
       percent: 30
-      height: 10em
+      height: 10.5em
       color: red
-      desc: Description
+      desc: IDE utilisé tout au long de mon BTS pour développer des applications Java.
     - name: XAMPP
       src: https://cdn.worldvectorlogo.com/logos/xampp.svg
       percent: 60
-      height: 10em
+      height: 12.5em
       color: red
-      desc: Description
+      desc: Utilisé pour configurer un environnement de développement local, notamment pour tester des applications web et gérer des bases de données MySQL.
     - name: Wireshark
       src: https://avatars.githubusercontent.com/u/6233056?v=4
       percent: 30
-      height: 10em
+      height: 14em
       color: red
-      desc: Description
+      desc: Utilisé pour analyser et déboguer le trafic réseau, ce qui m'a permis de m'entraîner pour ma formation en cybersécurité et d'acquérir une compréhension approfondie des protocoles et de la sécurité des réseaux.
     - name: Postman
-      src: https://www.svgrepo.com/show/354202/postman-icon.svg
-      percent: 60
-      height: 10em
+      src: images/skillpage/postman.svg
+      percent: 70
+      height: 11.5em
       color: red
-      desc: Description<br><img src="https://seeklogo.com/images/S/sonarlint-icon-logo-0161BCE8AD-seeklogo.com.png?v=638198548050000000">
+      desc: Utilisé pour tester et déboguer des API, facilitant la vérification des requêtes et des réponses lors du développement.
+    - name: Drawio
+      src: images/skillpage/drawio.png
+      percent: 90
+      height: 11.5em
+      color: red
+      desc: Utilisé pour créer des diagrammes et des schémas, facilitant la visualisation et la documentation des processus et des architectures.
+    - name: SolidWorks
+      src: images/skillpage/solidworks.png
+      percent: 80
+      height: 11.5em
+      color: red
+      desc: Utilisé pour concevoir et modéliser des pièces en 3D, facilitant la création de prototypes et la préparation de modèles pour l'impression 3D.
+    - name: IDA
+      src: images/skillpage/ida.png
+      percent: 40
+      height: 10.5em
+      color: red
+      desc: Utilisé pour l'analyse statique de code binaire afin de m'entraîner au reverse engineering.
+    - name: VEGAS Pro 17
+      src: images/skillpage/vegaspro17.png
+      percent: 60
+      height: 11.5em
+      color: red
+      desc: Utilisé pour le montage vidéo et le tracking, avec une compétence dans la création de contenus visuels et l'amélioration de la qualité vidéo.
+    - name: VMWare
+      src: images/skillpage/vmware.png
+      percent: 80
+      height: 11.5em
+      color: red
+      desc: Utilisé pour créer et gérer des environnements virtuels, facilitant le test et le développement dans des systèmes d'exploitation isolés.

@@ -26,3 +26,12 @@ experience:
     - Création d’un <strong>script Python</strong> pour transférer des dépendances<br>
     - Création de requêtes d’alert <strong>RabbitMQ sur Prometheus</strong><br>
     - Création de graphiques d’alert <strong>RabbitMQ sur Graphana</strong>"
+- start_date: 4 Septembre
+  end_date: 30 Août, 2023
+  type: Alternance Licence Développeur
+  company: Sodebo
+  place: Montaigu-Vendée
+  info: "
+    - Évolution d'un portail applicatif
+    - Migration de base de données PostgreSQL vers un nouveau serveur PostgreSQL 16 (création d'une interface Python pour faciliter la migration)
+    - Migration deprojet vers un nouveau serveur Kubernetes

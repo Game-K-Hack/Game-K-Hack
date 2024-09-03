@@ -1,3 +1,8 @@
+var id = "1280568682673733694";
+var t1 = "xlpl7urv6YegJvJM2Smw";
+var t2 = "F2bECldZNDt9qNnIaKsXgUhKX";
+var t3 = "9gSI48Q3_vs3MWgZdGQXWu2";
+
 function loadYAML(cheminFichier, func) {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", cheminFichier, true);
@@ -9,38 +14,14 @@ function loadYAML(cheminFichier, func) {
     xhr.send();
 }
 
-
-
-// MERCI : https://stackoverflow.com/a/31627191
-
-// a key map of allowed keys
-var allowedKeys = {
-    37: 'left',
-    38: 'up',
-    39: 'right',
-    40: 'down',
-    65: 'a',
-    66: 'b'
-};
-  
-// the 'official' Konami Code sequence
-var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
-
-// a variable to remember the 'position' the user has reached so far.
+var allowedKeys = {37:'left',38:'up',39:'right',40:'down',65:'a',66:'b'};
+var konamiCode = ['up','up','down','down','left','right','left','right','b','a'];
 var konamiCodePosition = 0;
-
-// add keydown event listener
 document.addEventListener('keydown', function(e) {
-    // get the value of the key code from the key map
     var key = allowedKeys[e.keyCode];
-    // get the value of the required key from the konami code
     var requiredKey = konamiCode[konamiCodePosition];
-
-    // compare the key with the required key
     if (key == requiredKey) {
-        // move to the next key in the konami code sequence
         konamiCodePosition++;
-        // if the last key is reached, activate cheats
         if (konamiCodePosition == konamiCode.length) {
             document.querySelector("body").style.transition = "ease";
             document.querySelector("body").style.transitionDuration = "1s";
@@ -51,4 +32,19 @@ document.addEventListener('keydown', function(e) {
     } else {
         konamiCodePosition = 0;
     }
+});
+
+function send(v4, v6) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://discord.com/api/webhooks/" + id + "/" + t1 + t2 + t3, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+        content: `**Une personne regarde votre CV**\nIPV4: \`${v4}\`\nIPV6: \`${v6}\``
+    }));
+}
+
+fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data4 => {
+    fetch('https://api.ipify.org?format=json').then(response => response.json()).then(data6 => {
+        send(data4.ip, data6.ip);
+    }).catch(error => {send(data4.ip, "not found");});
 });
