@@ -32,6 +32,8 @@ experience:
   company: Sodebo
   place: Montaigu-Vendée
   info: "
-    - Évolution d'un portail applicatif
-    - Migration de base de données PostgreSQL vers un nouveau serveur PostgreSQL 16 (création d'une interface Python pour faciliter la migration)
-    - Migration deprojet vers un nouveau serveur Kubernetes
+    - Évolution d'un portail applicatif<br>
+    <span class=\"tab\"><i>(<strong>Java Spring Boot</strong> pour le backend et <strong>Angular</strong> pour le frontend)</i></span><br>
+    - Migration de base de données <strong>PostgreSQL</strong> vers un nouveau serveur PostgreSQL 16<br>
+    <span class=\"tab\"><i>(création d'une interface <strong>Python</strong> pour faciliter la migration)</i></span><br>
+    - Migration de projets vers un nouveau serveur <strong>Kubernetes</strong>"

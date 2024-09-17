@@ -15,6 +15,7 @@ function patternExperience(elm) {
 
 loadYAML("./data/experience.yml", content => {
     content = content["experience"];
+    console.log(content);
     let base = document.getElementById("ep").innerHTML;
     for (let elm of content) {
         base = patternExperience(elm) + base;
