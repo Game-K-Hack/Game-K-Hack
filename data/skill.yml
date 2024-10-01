@@ -52,7 +52,7 @@ skill:
               &nbsp;- Scikit-learn<br>
             <br>
             Vous pouvez retrouver certains projets sur mon 
-            <a onclick="window.open('https://github.com/Game-K-Hack', '_blank').focus();" class="link"><strong>GitHub</strong></a>
+            <a onclick="window.open('https://github.com/Game-K-Hack', '_blank').focus();" class="hoverlink"><strong>GitHub</strong></a>
     - name: Java
       src: images/skillpage/java.png
       percent: 60

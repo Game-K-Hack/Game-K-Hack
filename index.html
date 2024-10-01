@@ -7,11 +7,16 @@
   <link rel="icon" href="./images/favicon.png">
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="./styles/timeline-style.css">
+  <link rel="stylesheet" href="./styles/navbar-style.css">
+  <link rel="stylesheet" href="./styles/cyber-style.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
 
   <script src="./scripts/tailwindcss-3.3.5.min.js"></script>
   <script src="./scripts/js-yaml.min.js"></script>
   <script src="./scripts/alpine.min.js" defer></script>
   <script src="./scripts/utils.js"></script>
+  
+  <script id="thm_script" src="https://tryhackme.com/badge/750858"></script>
 
 </head>
 
@@ -65,6 +70,40 @@
         </g>
       </svg>
     </div>
+    <!-- navbar -->
+    <div class="navbar-container">
+      <a class="navbar-link" href="#formation">
+        <i class="navbar-icon-hoverable fa-solid fa-graduation-cap"></i>
+        <i class="navbar-icon-default fa-light fa-graduation-cap"></i>
+        <span>Formation</span>
+      </a>
+      <a class="navbar-link" href="#informatics-skill">
+        <i class="navbar-icon-hoverable fa-solid fa-briefcase"></i>
+        <i class="navbar-icon-default fa-light fa-briefcase"></i>
+        <span>Compétences</span>
+      </a>
+      <a class="navbar-link" href="#cybersecurity">
+        <i class="navbar-icon-hoverable fa-solid fa-shield"></i>
+        <i class="navbar-icon-default fa-light fa-shield"></i>
+        <span>Cybersécurité</span>
+      </a>
+      <a class="navbar-link" href="#professional-experience">
+        <i class="navbar-icon-hoverable fa-solid fa-flask"></i>
+        <i class="navbar-icon-default fa-light fa-flask"></i>
+        <span>Expériences</span>
+      </a>
+      <a class="navbar-link" href="#center-of-interest">
+        <i class="navbar-icon-hoverable fa-solid fa-hand-holding-heart"></i>
+        <i class="navbar-icon-default fa-light fa-hand-holding-heart"></i>
+        <span>Centre d'intérêt</span>
+      </a>
+      <a class="navbar-link" href="#about-me">
+        <i class="navbar-icon-hoverable fa-solid fa-info"></i>
+        <i class="navbar-icon-default fa-light fa-info"></i>
+        <span>À propos</span>
+      </a>
+      <!-- <a class="navbar-link" href="#"><span>CodePen</span></a> -->
+    </div>
     <!-- wave -->
     <div>
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -85,7 +124,7 @@
 
   <!-- Formation start -->
 
-  <h1 class="arialroundedmt title">
+  <h1 id="formation" class="arialroundedmt title">
     FORMATION
   </h1>
 
@@ -103,9 +142,9 @@
   </div>
 
   <!-- Formation ends -->
-  <!-- Informatique skill starts-->
+  <!-- Informatics skill starts-->
 
-  <h1 class="arialroundedmt title" style="margin-bottom: calc(2em - 100px);">
+  <h1 id="informatics-skill" class="arialroundedmt title" style="margin-bottom: calc(2em - 100px);">
     COMPÉTENCES INFORMATIQUES
   </h1>
 
@@ -127,12 +166,96 @@
     <noscript>Please enable JavaScript to see my skills on the tools</noscript>
   </div>
 
-  <!-- Professional-experience ends -->
+  <!-- Informatics skill ends -->
+  <!-- cybersecurity starts -->
+
+  <div style="height: 110px;"><!-- space --></div>
+
+  <h1 id="cybersecurity" class="arialroundedmt title">
+    CYBERSÉCURITÉ
+  </h1>
+
+  <div class="cyber-container">
+    <div class="cyber-stat">
+      <img class="cyber-thm-logo" src="./images/THMlogo.png">
+      <div class="cyber-stat-elm">
+        <h3 id="thmrank" class="cyber-stat-elm-h3">_</h3>
+        <p class="cyber-stat-elm-p">Rank</p>
+      </div>
+      <div class="cyber-stat-elm">
+        <h3 id="thmroom" class="cyber-stat-elm-h3">_</h3>
+        <p class="cyber-stat-elm-p">Rooms Complete</p>
+      </div>
+      <div class="cyber-stat-elm">
+        <h3 id="thmlevel" class="cyber-stat-elm-h3">_</h3>
+        <p class="cyber-stat-elm-p">Level</p>
+      </div>
+      <div class="cyber-stat-elm">
+        <h3 id="thmbadge" class="cyber-stat-elm-h3">_</h3>
+        <p class="cyber-stat-elm-p">Badges</p>
+      </div>
+    </div>
+    <!-- <div>
+      <div class="cyber-badge">
+        <div class="cyber-badge-elm">
+          <img class="cyber-badge-elm-img" src="https://tryhackme.com/img/badges/webbed.svg">
+          <div class="cyber-badge-elm-div">
+            <h3>Webbed</h3>
+            <p>Understands how the world wide web works</p>
+          </div>
+        </div>
+        <div class="cyber-badge-elm">
+          <img class="cyber-badge-elm-img" src="https://tryhackme.com/img/badges/linux.svg">
+          <div class="cyber-badge-elm-div">
+            <h3>cat linux.txt</h3>
+            <p>Being competent in Linux</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cyber-room-elm" style="margin-top: 100px;">
+      <img class="cyber-room-elm-img" src="https://tryhackme-images.s3.amazonaws.com/room-icons/7934742b978f9776f9af2efbae0142f3.png">
+      <div class="cyber-room-elm-div">
+        <h3>Careers in Cyber</h3>
+        <p class="cyber-room-elm-p">Learn about the different careers in cyber security.</p>
+      </div>
+    </div>
+    <div class="cyber-room-elm">
+      <img class="cyber-room-elm-img" src="https://tryhackme-images.s3.amazonaws.com/room-icons/dcc87331d4aa057893ef54b4a4aa35f5.png">
+      <div class="cyber-room-elm-div">
+        <h3>Intro to Defensive Security</h3>
+        <p class="cyber-room-elm-p">Introducing defensive security and related topics, such as threat intelligence, SOC, DFIR, and SIEM.</p>
+      </div>
+    </div>
+    <div class="cyber-room-elm">
+      <img class="cyber-room-elm-img" src="https://tryhackme-images.s3.amazonaws.com/room-icons/01d0111f4aa4a8dce8143903e99eefd4.png">
+      <div class="cyber-room-elm-div">
+        <h3>Network Security</h3>
+        <p class="cyber-room-elm-p">Learn about network security, understand attack methodology, and practice hacking into a target server.</p>
+      </div>
+    </div>
+    <div class="cyber-room-elm">
+      <img class="cyber-room-elm-img" src="https://tryhackme-images.s3.amazonaws.com/room-icons/3a11e1490ae19b35d1eefa00a32bdb1a.png">
+      <div class="cyber-room-elm-div">
+        <h3>Web Application Security</h3>
+        <p class="cyber-room-elm-p">Learn about web applications and explore some of their common security issues.</p>
+      </div>
+    </div>
+    <div class="cyber-room-elm">
+      <img class="cyber-room-elm-img" src="https://tryhackme-images.s3.amazonaws.com/room-icons/f9dbbfc2dadce39c2ce9a592a0389d38.png">
+      <div class="cyber-room-elm-div">
+        <h3>Intro to Offensive Security</h3>
+        <p class="cyber-room-elm-p">Hack your first website (legally in a safe environment) and experience an ethical hacker's job.</p>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- cybersecurity end -->
   <!-- Professional-experience starts -->
 
   <div style="height: 110px;"><!-- space --></div>
 
-  <h1 class="arialroundedmt title">
+  <h1 id="professional-experience" class="arialroundedmt title">
     EXPÉRIENCES PROFESSIONNELLES
   </h1>
 
@@ -152,7 +275,7 @@
   <!-- Professional-experience ends -->
   <!-- Center-of-interest starts -->
 
-  <h1 class="arialroundedmt title">
+  <h1 id="center-of-interest" class="arialroundedmt title">
     CENTRE D'INTÉRÊT
   </h1>
 
@@ -190,11 +313,11 @@
    
   <div style="height: 110px;"><!-- space --></div>
 
-  <h1 class="arialroundedmt title">
+  <h1 id="about-me" class="arialroundedmt title">
     À PROPOS DE MOI
   </h1>
 
-  <p class="p-about">Développeur informatique, passionné depuis l’âge de 12 ans, j'ai progressivement acquis des compétences dans des domaines variés. Je maîtrise plusieurs langages et continue de me former activement en cybersécurité via la plateforme TryHackMe.</p>
+  <p class="p-about">Développeur informatique, passionné depuis l’âge de 12 ans, j'ai progressivement acquis des compétences dans des domaines variés. Je maîtrise plusieurs langages et continue de me former activement en cybersécurité via la plateforme <b><a class="hoverlink" href="https://tryhackme.com">TryHackMe</a></b>.</p>
 
   <!-- about-me end -->
   <!-- Content ends -->
@@ -258,5 +381,7 @@
 <script src="./scripts/skill.js"></script>
 <script src="./scripts/study.js"></script>
 <script src="./scripts/experience.js"></script>
+
+<script src="./scripts/thm.js"></script>
 
 </html>

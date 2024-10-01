@@ -151,9 +151,9 @@ p {
   fill: #1c2128;
 }
 
-.link:hover {
+.hoverlink:hover {
   cursor: pointer;
-  color: #2864d2;
+  color:#3ca0ff;
 }
 
 .skill-box {
