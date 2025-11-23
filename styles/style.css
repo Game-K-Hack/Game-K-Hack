@@ -25,6 +25,19 @@ body {
   background-size: cover;
 }
 
+.subtitle {
+  margin-bottom: calc(2em - 100px);
+  letter-spacing: 5px;
+  padding-bottom: 0.5em;
+}
+
+.title-desc {
+  margin: -90px auto 0 auto;
+  width: 70%;
+  text-align: center;
+  font-style: italic;
+}
+
 h1 {
   font-family: 'Lato', sans-serif;
   font-weight:300;
@@ -177,35 +190,29 @@ p {
   width: 400px;
   height: 5rem;
   align-items: start;
-  /* transition: height 0.4s ease-in-out; */
+  transition: height .2s ease-in-out;
   position: absolute;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
-#elm:hover {
-  height: 30rem;
-  transition: height 0.3s ease-in-out;
-}
-
-#elm:hover .slide-text h2 {
-  animation: 0.5s slide-text 0.2s forwards;
-  transform: translateY(-100%);
-}
-
-.slide-text {
-  width: 100%;
-  overflow: hidden;
-  max-width: 360px;
-  position: absolute;
-  margin-top: 7rem;
+.item-description {
+  margin-top: 35px;
+  margin-bottom: 15px;
+  margin-left: -20px;
+  margin-right: -20px;
+  text-align: justify;
   color: rgb(75 85 99);
-  transform: translateY(-100%);
+  clip-path: inset(0 0 100% 0);
 }
 
-@keyframes slide-text {
-  to {
-    transform: translateY(0);
-  }
+#elm:hover .item-description {
+  animation: reveal-down .15s ease forwards;
+  animation-delay: .05s;
+}
+
+@keyframes reveal-down {
+  from { clip-path: inset(0 0 100% 0); }
+  to { clip-path: inset(0 0 0 0); }
 }
 
 .tab {
@@ -255,4 +262,35 @@ p {
   font-size: 1.3em;
   margin-left: auto;
   margin-right: auto;
+}
+
+.minibox-container {
+  width: 70%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.minibox-elm {
+  margin: 20px;
+  width: 150px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 5px 0px;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+.minibox-elm img {
+  width: 100%;
+  margin-right: 10px;
+}
+
+.minibox-elm h2 {
+  font-size: 20px;
+  padding: 10px;
+  color: rgb(75 85 99);
+  font-family: 'Lato', sans-serif;
 }

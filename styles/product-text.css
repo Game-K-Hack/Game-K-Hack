@@ -1,0 +1,66 @@
+
+.product-text {
+  height: auto;
+  margin: 0 auto;
+  width: 70%;
+  border-radius: 30px;
+  margin-top: 100px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 1.3em;
+  font-family: "Lato", sans-serif;
+  padding: 30px;
+  color: #333333;
+  text-align: justify;
+}
+
+.product-text img {
+  max-width: 100px; /* Taille de la “lettrine” */
+  max-height: 100px; /* Carré */
+  float: left; /* Permet à l’image de s’insérer comme une première lettre */
+  margin: 0 12px 5px 0; /* Espacement autour */
+  object-fit: cover; /* Pour garder un beau cadrage */
+  border-radius: 4px; /* Optionnel : coins arrondis */
+}
+
+.product-text .product-title {
+  font-size: 1.5em;
+  font-family: "ArialRoundedMT", serif;
+  color: #3d4351;
+  margin-bottom: 10px;
+}
+
+.product-text:has(> .short) { cursor: pointer; }
+
+.product-text .short {
+  display: unset;
+}
+
+.product-text .long {
+  display: none;
+}
+
+
+.product-text-extended {
+  padding: 50px;
+}
+
+.product-text-extended img {
+  margin: 0 auto;
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: unset;
+  float: unset;
+}
+
+.product-text-extended .product-title {
+  margin: 30px auto 50px auto;
+  text-align: center;
+}
+
+.product-text-extended .short {
+  display: none;
+}
+
+.product-text-extended .long {
+  display: unset;
+}

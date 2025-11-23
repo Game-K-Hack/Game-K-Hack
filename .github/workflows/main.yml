@@ -81,6 +81,7 @@ jobs:
           rm -f dist/model.html
           rm -f dist/.gitignore
           rm -rf dist/.github
+          rm -rf dist/.git
           rm -rf dist/__pycache__
 
           echo "📦 Dossier dist/ préparé pour le déploiement"
