@@ -79,6 +79,7 @@ jobs:
           rm -f dist/README.md
           rm -f dist/requirements.txt
           rm -f dist/model.html
+          rm -f dist/.gitignore
           rm -rf dist/.github
           rm -rf dist/__pycache__
 
