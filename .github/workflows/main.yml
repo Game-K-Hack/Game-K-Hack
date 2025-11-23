@@ -1,0 +1,108 @@
+name: Build & Deploy FTP
+
+on:
+  push:
+    tags:
+      - '[0-9]*.[0-9]*.[0-9]*'  # X.Y.Z
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate tag is on master
+        run: |
+          echo "🔎 Vérification du tag sur master"
+          if ! git branch --contains "$GITHUB_SHA" | grep -q "master"; then
+            echo "❌ Le tag n'a pas été créé sur master. Annulation."
+            exit 1
+          fi
+          echo "✔ Tag OK"
+
+      - name: Install Firefox
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y firefox-esr
+
+      - name: Install Geckodriver
+        run: |
+          GECKO_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep tag_name | cut -d '"' -f 4)
+          wget https://github.com/mozilla/geckodriver/releases/download/$GECKO_VERSION/geckodriver-$GECKO_VERSION-linux64.tar.gz
+          tar -xzf geckodriver-*.tar.gz
+          sudo mv geckodriver /usr/local/bin/
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run make.py (generate HTML + images)
+        env:
+          CREDLY_ID: ${{ secrets.CREDLY_ID }}
+          ROOTME_USER: ${{ secrets.ROOTME_USER }}
+          TRYHACKME_USERNAME: ${{ secrets.TRYHACKME_USERNAME }}
+        run: |
+          python maker.py
+
+      # Ajout automatique des images téléchargées
+      - name: Commit downloaded images
+        run: |
+          echo "📁 Vérification des images téléchargées…"
+
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          # Ajouter uniquement les images
+          git add images/ || true
+
+          if ! git diff --cached --quiet; then
+            echo "🖼️ Nouvelles images détectées → commit + push"
+            git commit -m "Add downloaded images [CI]"
+            git push
+          else
+            echo "✔ Aucune nouvelle image"
+          fi
+
+      # Préparer les fichiers pour l’upload FTPS
+      - name: Build deployment folder
+        run: |
+          mkdir dist
+          cp -r . dist/
+
+          # Supprimer les fichiers à ne PAS uploader
+          rm -f dist/maker.py
+          rm -f dist/service.py
+          rm -f dist/README.md
+          rm -f dist/requirements.txt
+          rm -f dist/model.html
+          rm -rf dist/.github
+          rm -rf dist/__pycache__
+
+          echo "📦 Dossier dist/ préparé pour le déploiement"
+
+      # Upload FTPS (tous les fichiers récursivement)
+      - name: Upload all files via FTP
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_TARGET_PATH: ${{ secrets.FTP_TARGET_PATH }}
+        run: |
+          echo "📤 Upload FTPS…"
+
+          find dist -type f | while read file; do
+            relative_path="${file#dist/}"
+            remote_path="$FTP_TARGET_PATH/$relative_path"
+
+            echo "→ Upload : $relative_path"
+
+            curl --ftp-ssl -T "$file" \
+              --user "$FTP_USER:$FTP_PASSWORD" \
+              "ftps://$FTP_HOST/$remote_path"
+          done
+
+          echo "✔ Déploiement terminé"
