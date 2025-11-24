@@ -169,7 +169,7 @@ for cert in certs:
             '<div class="cert card3d"><div class="card3d-image-wrapper" data-z="30">' \
            f'<img src="{image}" alt="thumbnail" class="card3d-image">' \
            f'</div><h2 class="card3d-title">{cert["name"]}</h2>'
-    if "id" in cert.keys():
+    if "id" in cert.keys() and cert["id"] is not None:
         code += f'<p class="card3d-id">{cert["id"]}</p>'
     code += '</div></a>'
     balise += code
@@ -209,6 +209,17 @@ for item in items:
         code = f'<div class="product-text"><img src="images/product/{icon}">' \
                f'<h1 class="product-title">{title}</h1>{description}</div>'
     set_item2html(item, code)
+
+# Ajouter les centres d'interet
+items = get_items("CENTER-OF-INTEREST")
+for item in items:
+    code = '<div class="centofint-container"><div class="centofint-display"></div><div class="centofint-list">'
+    code += '<div class="centofint-elm" p="" unselectable></div>'
+    for title, image in item[0]:
+        code += f'<div class="centofint-elm" p=""><img class="ci-img" src="./images/center-of-interest/{image}"><p>{title}</p></div>'
+    code += '<div class="centofint-elm" p="" unselectable></div></div></div>'
+    set_item2html(item, code)
+
 
 
 with open("index.html", "w", encoding="utf8") as index: # on créer un fichier index
