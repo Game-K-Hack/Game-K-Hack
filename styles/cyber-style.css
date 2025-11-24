@@ -1,16 +1,11 @@
 .cyber-container {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 70%;
     padding: 50px;
     border-radius: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     font-family: 'ArialRoundedMT', serif;
-}
-
-.cyber-container:hover {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 10px 0px;
-    cursor: pointer;
 }
 
 #thm_badge {
@@ -22,7 +17,7 @@
 
 .cyber-stat {
     display: flex;
-    /* margin-bottom: 100px; */
+    margin-bottom: 50px;
 }
 
 .cyber-thm-logo {
@@ -47,6 +42,7 @@
 
 .cyber-badge {
     display: flex;
+    margin-bottom: 50px;
 }
 
 .cyber-badge-elm {
@@ -55,7 +51,7 @@
     margin-right: auto;
     border-radius: 15px;
     padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px inset;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 1px 5px 0px;
 }
 
 .cyber-badge-elm-img {
@@ -70,7 +66,26 @@
     margin-bottom: auto;
 }
 
+.cyber-badge-elm-div span {
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: rgb(38, 137, 12);
+    background-color: rgb(212, 231, 206);
+    font-size: 11px;
+    font-family: Source Sans Pro, sans-serif;
+}
+
+.cyber-badge-elm-div span[c="co"] { color: rgb(17, 83, 228); background-color: rgb(207, 221, 250); }
+.cyber-badge-elm-div span[c="ra"] { color: rgb(38, 137, 12); background-color: rgb(212, 231, 206); }
+.cyber-badge-elm-div span[c="ep"] { color: rgb(159, 0, 255); background-color: rgb(236, 204, 255); }
+
 /* ROOM */
+
+.cyber-room {
+    margin-top: 50px;
+}
 
 .cyber-room-elm {
     display: flex;
@@ -80,12 +95,18 @@
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px inset;
     margin-top: 20px;
+    transition: transform .2s;
+}
+
+.cyber-room-elm:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transform: scale(1.03);
 }
 
 .cyber-room-elm-img {
     margin-left:20px;
     margin-right:20px;
-    width: 100px;
+    width: 70px;
 }
 
 .cyber-room-elm-div {
@@ -96,3 +117,25 @@
 .cyber-room-elm-p {
     margin-top: 10px;
 }
+
+.cyber-room-title {
+    display: flex;
+    align-items: center;
+}
+
+.cyber-room-title svg {
+    width: 15px;
+    height: 15px;
+    margin-left: 15px;
+}
+
+.cyber-room-title p {
+    margin-left: 5px;
+    font-size: 13px;
+}
+
+.cyber-room-title p[c="inf"] { color: rgb(17, 83, 228); }
+.cyber-room-title p[c="eas"] { color: rgb(59, 200, 30); }
+.cyber-room-title p[c="med"] { color: rgb(255, 187, 69); }
+.cyber-room-title p[c="har"] { color: rgb(255, 91, 103); }
+.cyber-room-title p[c="ins"] { color: rgb(102, 0, 202); }

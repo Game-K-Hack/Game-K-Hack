@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Curriculum vitæ</title>
+  <link rel="icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/timeline-style.css">
+  <link rel="stylesheet" href="./styles/navbar-style.css">
+  <link rel="stylesheet" href="./styles/cyber-style.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+  <link rel="stylesheet" href="./styles/card.css">
+  <link rel="stylesheet" href="./styles/product-text.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="inner-header flex">
+      {%SVG:profile.svg%}
+      {%SVG:name.svg%}
+    </div>
+    <!-- navbar -->
+    <div class="navbar-container">
+      {%NAV-ITEM:Formation;formation;fa-graduation-cap%}
+      {%NAV-ITEM:Compétences;informatics-skill;fa-briefcase%}
+      {%NAV-ITEM:Cybersécurité;cybersecurity;fa-shield%}
+      {%NAV-ITEM:Expériences;professional-experience;fa-flask%}
+      {%NAV-ITEM:Centres d'intérêt;center-of-interest;fa-hand-holding-heart%}
+      {%NAV-ITEM:Projets & réalisations;achievements;fa-pen%}
+      {%NAV-ITEM:À propos;about-me;fa-info%}
+    </div>
+    <!-- wave -->
+    <div>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+    </div>
+
+  </div>
+
+  <!-- Formation start -->
+
+  <h1 id="formation" class="arialroundedmt title">
+    FORMATION
+  </h1>
+
+  {%TIMELINE:
+    Licence Informatique - Développeur;
+    À La Joliverie (Saint-Sébastien-sur-Loire);
+    2023, 2024§
+    BTS - Services informatiques aux organisations;
+    À La Joliverie (Saint-Sébastien-sur-Loire);
+    2021, 2023§
+    BAC - STI2D (Sciences et technologies de l'industrie et du développement durable);
+    Option SIN (Système d’Information et Numérique)<br>À Jean-Perrin (Rezé);
+    2020, 2021
+  %}
+
+  <h1 class="arialroundedmt title subtitle" style="margin-top: 0;">
+    Certification
+  </h1>
+
+  {%CERTIFICATIONS%}
+
+  <div style="height: 110px;"><!-- space --></div>
+
+  <h1 id="informatics-skill" class="arialroundedmt title" style="margin-bottom: calc(2em - 100px);">
+    COMPÉTENCES INFORMATIQUES
+  </h1>
+
+  <h1 class="arialroundedmt title subtitle">
+    Langages
+  </h1>
+
+  <div style="text-align: center;margin-inline: 5%" id="skpl">
+    <!-- Auto-completion by JS -->
+    <noscript>Please enable JavaScript to see my programming language skills</noscript>
+    {%ITEM:90;Python;language/python.png;
+      J'utilise quotidiennement Python et voici les librairies que j'utilise pour mes différents projets Python :<br><br>
+      OS, Sys, Time, Flask, Tkinter, Requests, Datetime, BeautifulSoup, PIL (Pillow), Json, NumPy, OpenCV, Random, Discord, Logging, Pyaudio, Selenium, Threading, Subprocess, Websockets, Pytesseract (OCR), Configparser, NLTK, Keras, Base64, OpenAI, Pandas, Pynput, Winreg, Asyncio, Pystray, PyTorch, Zipfile, Win32gui, Pyautogui, Matplotlib, TensorFlow, Scikit-learn<br>
+      <br>Vous pouvez retrouver certains projets sur mon <a onclick="window.open('https://github.com/Game-K-Hack', '_blank').focus();" class="hoverlink"><strong>GitHub</strong></a>
+    %}
+    {%ITEM:70;Java;language/java.png;
+      Expérience approfondie en Java, développement d'applications Android en utilisant Android Studio. Maîtrise de la conception d'interfaces graphiques attrayantes et de la connexion à des bases de données pour une fonctionnalité complète. J'ai également une solide expérience d'un an en développement backend avec Spring Boot.
+    %}
+    {%ITEM:80;HTML;language/html.png;
+      Maîtrise des balises HTML essentielles et compétence avérée dans leur utilisation adéquate pour créer des sites web structurés.
+    %}
+    {%ITEM:50;CSS;language/css.png;
+      Compétences de base en CSS, continuellement renforcées grâce à une exploration constante des ressources en ligne.
+    %}
+    {%ITEM:70;JavaScript;language/javascript.png;
+      Maîtrise du JavaScript côté navigateur web permettant d'extraire des données d'un site, de développer des extensions et de manipuler du code HTML.
+    %}
+    {%ITEM:70;TypeScript;language/typescript.svg;
+      Maîtrise du TypeScript avec le framework Angular
+    %}
+    {%ITEM:40;PHP;language/php.png;
+      Maîtrise des concepts fondamentaux de PHP, ainsi qu'une connaissance approfondie des failles potentielles du langage et des techniques pour les corriger.
+    %}
+    {%ITEM:30;Arduino;language/arduino.png;
+      Compétences en Arduino comprenant le contrôle de servomoteurs, de LED et de boutons, ainsi qu'une expérience en électronique. J'ai également programmé des afficheurs et je possède une solide compréhension des bases de la programmation.
+    %}
+    {%ITEM:70;MySQL;language/mysql.png;
+      Je possède une expertise en SQL comprenant la maîtrise des injections SQL ainsi qu'une solide maîtrise des fonctions essentielles de SQL.
+    %}
+    {%ITEM:70;Angular;language/angular.svg;
+      Un an d'expérience en Angular durant mon alternance, où j'ai développé des applications web dynamiques et intégrées avec des API backend.
+    %}
+    {%ITEM:60;NodeJS;language/nodejs.svg;
+      Expérience en Node.js avec du développement backend et la création de scripts d'automatisation.
+    %}
+    {%ITEM:50;Spring Tools;language/spring.svg;
+      Expérience acquise lors de mon alternance en modification d'applications Java Spring et en création de tests unitaires. Compétences de base dans l'utilisation de Spring Tools.
+    %}
+    {%ITEM:3;COBOL;language/cobol.png;
+      Je suis en cours d'apprentissage du langage COBOL
+    %}
+    {%ITEM:0;Ada;language/ada.png;
+      Une fois que j'aurai acquis de bonnes bases en COBOL, je me lancerai dans l'apprentissage du langage Ada.
+    %}
+  </div>
+
+  <h1 class="arialroundedmt title subtitle">
+    Outils
+  </h1>
+
+  <div style="text-align: center;margin-inline: 5%" id="skt">
+    <noscript>Please enable JavaScript to see my skills on the tools</noscript>
+    {%ITEM:90;VSCode;tools/vscode.svg;
+      Utilisation quotidienne avec expertise avancée. Intégration d'extensions comme SonarLint pour maintenir la qualité du code.
+    %}
+    {%ITEM:70;Grafana;tools/grafana.svg;
+      Expérience approfondie lors de mon stage, avec la création de graphiques et d'indicateurs à partir de requêtes Prometheus, intégrant des données provenant de files RabbitMQ.
+    %}
+    {%ITEM:30;Android Studio;tools/androidstudio.svg;
+      Utilisation lors de cours pour développer une application en Java. Compétences de base, notamment dans la navigation dans l'explorateur de fichiers, le lancement d'émulateur, et le débogage. Cependant, une compréhension limitée de l'interface et des paramètres de l'IDE.
+    %}
+    {%ITEM:70;Jira;tools/jira.svg;
+      Utilisation régulière pour la gestion des tickets assignés, création et attribution de tickets, ainsi que la modification de leur statut. Capacité à créer des workflows personnalisés avec différents droits et à générer des tableaux pour une vue d'ensemble.
+    %}
+    {%ITEM:80;Git;tools/git.svg;
+      Une utilisation quotidienne avec une expertise marquée dans les commandes fondamentales telles que clone, add, commit, pull, push et merge. J'ai également recours de manière occasionnelle aux commandes reset et rebase pour des exigences spécifiques.
+    %}
+    {%ITEM:80;GitHub;tools/github.svg;
+      Expérience solide avec GitHub, couvrant divers aspects de la gestion de code, des fusions, des modifications de code, de la création de projets, etc.
+    %}
+    {%ITEM:90;GitLab;tools/gitlab.svg;
+      Compétences solides dans l'utilisation de GitLab, couvrant les aspects essentiels de la gestion de code, des fusions, du suivi des statuts, du redémarrage des pipelines, de la création de projets, etc.
+    %}
+    {%ITEM:60;RabbitMQ;tools/rabbitmq.svg;
+      Compréhension de base du fonctionnement de RabbitMQ, incluant la création de requêtes Prometheus via des queues RabbitMQ. Connaissances limitées dans la création et la gestion de queues RabbitMQ.
+    %}
+    {%ITEM:40;Eclipse;tools/eclipse.svg;
+      IDE utilisé tout au long de mon alternance pour développer des applications Java Spring Boot.
+    %}
+    {%ITEM:30;NetBeans;tools/netbeans.png;
+      IDE utilisé tout au long de mon BTS pour développer des applications Java.
+    %}
+    {%ITEM:60;XAMPP;tools/xampp.svg;
+      Utilisé pour configurer un environnement de développement local, notamment pour tester des applications web et gérer des bases de données MySQL.
+    %}
+    {%ITEM:70;Postman;tools/postman.svg;
+      Utilisé pour tester et déboguer des API, facilitant la vérification des requêtes et des réponses lors du développement.
+    %}
+    {%ITEM:40;Wireshark;tools/wireshark.png;
+      Utilisé pour analyser et déboguer le trafic réseau, ce qui m'a permis de m'entraîner pour ma formation en cybersécurité et d'acquérir une compréhension approfondie des protocoles et de la sécurité des réseaux.
+    %}
+    {%ITEM:30;IDA;tools/ida.png;
+      Utilisé pour l'analyse statique de code binaire afin de m'entraîner au reverse engineering.
+    %}
+    {%ITEM:90;Drawio;tools/drawio.png;
+      Utilisé pour créer des diagrammes et des schémas, facilitant la visualisation et la documentation des processus et des architectures.
+    %}
+    {%ITEM:80;SolidWorks;tools/solidworks.png;
+      Utilisé pour concevoir et modéliser des pièces en 3D, facilitant la création de prototypes et la préparation de modèles pour l'impression 3D.
+    %}
+    {%ITEM:60;VEGAS Pro 17;tools/vegaspro17.png;
+      Utilisé pour le montage vidéo et le tracking, avec une compétence dans la création de contenus visuels et l'amélioration de la qualité vidéo.
+    %}
+    {%ITEM:80;VMWare;tools/vmware.png;
+      Utilisé pour créer et gérer des environnements virtuels, facilitant le test et le développement dans des systèmes d'exploitation isolés.
+    %}
+  </div>
+
+  <h1 class="arialroundedmt title subtitle">
+    OS (Système d'exploitation)
+  </h1>
+
+  <div style="text-align: center;margin-inline: 5%" id="skt">
+    <noscript>Please enable JavaScript to see my skills on the tools</noscript>
+
+    {%ITEM:100;Windows 10;os/win10.svg;
+      Système d'exploitation principal, je l'utilise quotidiennement
+    %}
+    {%ITEM:80;Windows 11;os/win11.svg;
+      Système d'exploitation secondaire, je l'utilise principalement en entreprise
+    %}
+    {%ITEM:3;Windows CE7;os/winCE7.png;
+      Utilisé lors de la modification de l'autoradio de ma voiture (Hyundai i20 gen2)
+    %}
+    {%ITEM:60;Kali;os/kali.svg;
+      Utilisé sur VMware quand j'utilise des outils Linux
+    %}
+    {%ITEM:40;Fedora;os/fedora.svg;
+      Fedora (sponsorisée par l'entreprise Red Hat) utilisé lors de mon BTS SIO
+    %}
+    {%ITEM:10;Ubuntu;os/ubuntu.svg;
+      Employé lors de mes débuts dans l’apprentissage du système Linux
+    %}
+    {%ITEM:30;Debian;os/debian.svg;
+      Utilisé sur Raspberry Pi pour l’exécution de scripts Python d’automatisation
+    %}
+  </div>
+
+  <div style="height: 110px;"><!-- space --></div>
+
+  <h1 id="cybersecurity" class="arialroundedmt title">
+    CYBERSÉCURITÉ
+  </h1>
+
+  <h1 class="arialroundedmt title subtitle">
+    Outils
+  </h1>
+
+  <div class="card3d-container">
+    {%MINIBOX3D:Hydra;cyber/tools/hydra.svg;https://github.com/vanhauser-thc/thc-hydra%}
+    {%MINIBOX3D:Nmap;cyber/tools/nmap.svg;https://nmap.org%}
+    {%MINIBOX3D:Netcat;cyber/tools/netcat.svg;http://www.stearns.org/nc%}
+    {%MINIBOX3D:Hashcat;cyber/tools/hashcat.svg;https://hashcat.net/hashcat%}
+    {%MINIBOX3D:Wireshark;cyber/tools/wireshark.svg;https://www.wireshark.org%}
+    {%MINIBOX3D:Metasploit;cyber/tools/metasploit.svg;https://www.metasploit.com%}
+    {%MINIBOX3D:Binwalk;cyber/tools/binwalk.svg;https://github.com/ReFirmLabs/binwalk%}
+    {%MINIBOX3D:Aircrack-Ng;cyber/tools/aircrack-ng.svg;https://www.aircrack-ng.org%}
+    {%MINIBOX3D:Sherlock;cyber/tools/sherlock.svg;https://github.com/sherlock-project/sherlock%}
+    {%MINIBOX3D:Sqlmap;cyber/tools/sqlmap.svg;https://sqlmap.org%}
+    {%MINIBOX3D:John;cyber/tools/john.svg;https://github.com/openwall/john%}
+  </div>
+
+  <div style="height: 110px;"><!-- space --></div>
+
+  {%TRYHACKME%}
+
+  <div style="height: 110px;"><!-- space --></div>
+
+  {%ROOTME%}
+
+  <div style="height: 110px;"><!-- space --></div>
+
+  <h1 id="professional-experience" class="arialroundedmt title">
+    EXPÉRIENCES PROFESSIONNELLES
+  </h1>
+
+  {%TIMELINE:
+    CDD Analyste Développeur Flux - Algam (Thouaré-sur-Loire);
+    - Modification et maintenance de flux de données (CSV, JSON, SQL)<br>
+    - Développement initial d’un <strong>module de connexion API</strong><br>
+    - Réalisation de tests de <strong>sécurité sur un logiciel</strong> de gestion des RH;
+    6 Janvier | 11 Juillet, 2025§
+
+    Alternance Licence Développeur - Sodebo (Montaigu-Vendée);
+    - Évolution d'un portail applicatif<br>
+    <span class=\"tab\"><i>(<strong>Java Spring Boot</strong> pour le backend et <strong>Angular</strong> pour le frontend)</i></span><br>
+    - Migration de base de données <strong>PostgreSQL</strong> vers un nouveau serveur PostgreSQL 16<br>
+    <span class=\"tab\"><i>(création d'une interface <strong>Python</strong> pour faciliter la migration)</i></span><br>
+    - Migration de projets vers un nouveau serveur <strong>Kubernetes</strong>;
+    4 Septembre | 30 Août, 2023§
+    
+    Stage 2<sup>ème</sup> année BTS SIO - Sodebo (Montaigu-Vendée);
+    - Création de fichiers de <strong>configuration GitLab-CI</strong> pour la migration de projets<br>
+    - Création d’API via <strong>Gravitee</strong><br>
+    - Création d’un <strong>script Python</strong> pour transférer des dépendances<br>
+    - Création de requêtes d’alert <strong>RabbitMQ sur Prometheus</strong><br>
+    - Création de graphiques d’alert <strong>RabbitMQ sur Grafana</strong>;
+    3 Janvier | 17 Février, 2023§
+    
+    Stage 1<sup>ère</sup> année BTS SIO - Sodebo (Montaigu-Vendée);
+    - Modification d'application web (pour la production) en <strong>Angular</strong><br>
+    - Création de matrice de tests sur <strong>Squash</strong><br>
+    - Création d’interfaces pour un projet de gestion de fournitures sous <strong>Angular</strong><br>
+    - Réalisation d’un test de <strong>sécurité informatique</strong>;
+    23 Mai | 25 Juin, 2022§
+    
+    Stage découverte 3<sup>ème</sup> BTS SIO - Airbus (Bouguenais);
+    (Découverte de tous les secteurs);
+    22 Janvier | 25 Janvier, 2018
+  %}
+
+  <h1 id="center-of-interest" class="arialroundedmt title">
+    CENTRES D'INTÉRÊT
+  </h1>
+
+  <div class="ci-all-div">
+    <div class="ci-column">
+      <div class="ci-div">
+        <img class="ci-img" src="./images/center-of-interest/cyber-security.png" alt="Image of hacking">
+        <p class="ci-text">Hacking</p>
+      </div>
+      <div class="ci-div">
+        <img class="ci-img" src="./images/center-of-interest/robot.png" alt="Image of robotics">
+        <p class="ci-text">Robotique</p>
+      </div>
+      <div class="ci-div">
+        <img class="ci-img" src="./images/center-of-interest/badminton.png" alt="Image of badminton">
+        <p class="ci-text">Badminton</p>
+      </div>
+      <div class="ci-div">
+        <img class="ci-img" src="./images/center-of-interest/bricks.png" alt="Image of LEGO">
+        <p class="ci-text">LEGO</p>
+      </div>
+      <div class="ci-div">
+        <img class="ci-img" src="./images/center-of-interest/fuji.png" alt="Image of Japan">
+        <p class="ci-text">Japon</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- {%CENTER-OF-INTEREST:
+    IA Python (classification, deep learning);artificial-intelligence.png§
+    Hacking;cyber-security.png§
+    Robotique;robot.png§
+    Badminton;badminton.png§
+    LEGO;bricks.png§
+    Japon;fuji.png
+  %} -->
+
+  <div style="height: 110px;"><!-- space --></div>
+
+  <h1 id="achievements" class="arialroundedmt title">PROJETS & RÉALISATIONS</h1>
+  <p class="title-desc">certains paragraphes peuvent contenir plus de détails que d'autres en cliquant dessus<br><br>je n'ai pas mis tout ce que j'ai fait pour éviter de trop surcharger la page,<br>j'ai donc sélectionné les réalisations les plus impactantes et pertinentes pour un potentiel recrutement</p>
+
+  {%PRODUCT-TEXT:ssl.jpg;Réparation d’un module de communication bloquant;
+    J’ai été sollicité par la {!L:Socodep!https://socodep.fr!}, entreprise spécialisée dans la réparation électronique automobile, 
+    pour résoudre un blocage majeur affectant leur module de communication entre le site web et l’ERP. 
+    Ce module, indispensable pour permettre aux clients de soumettre leurs demandes de réparation en ligne, 
+    était hors service depuis une semaine malgré les tentatives de l’équipe de développement initiale. 
+    Après analyse et tests, j’ai identifié en moins de deux heures l’origine du dysfonctionnement : 
+    une vérification incorrecte du certificat SSL dans le code PHP du module. Une fois la correction appliquée, 
+    le système a été remis en service, permettant à l’entreprise de rétablir son flux de demandes en ligne 
+    et d’éviter la perte de clients potentiels.
+  %}
+
+  {%PRODUCT-TEXT:faille.png;Identification d’une vulnérabilité majeure dans un outil RH;
+    Lors du développement d’une extension Firefox destinée à l’affichage des heures travaillées dans {!L:SmartRH!https://www.cegedim-business-services.com/teams-rh!}, j’ai identifié une faille critique permettant d’accéder à des données personnelles sensibles via l’annuaire interne. En analysant et en instrumentant le code JavaScript côté client, j’ai mis en évidence que la requête chiffrée pouvait être manipulée pour récupérer des champs non affichés par l’interface (numéro de sécurité sociale, adresse, IBAN, salaires, informations familiales, etc.). J’ai immédiatement signalé la vulnérabilité à ma hiérarchie, permettant à l’éditeur de corriger le problème dans la semaine.;
+    Dans le cadre de mon travail chez Algam, j’ai développé une extension Firefox destinée à améliorer l’ergonomie de {!L:SmartRH!https://www.cegedim-business-services.com/teams-rh!}, une application web interne utilisée pour le pointage, la gestion des congés et la consultation/modification d’informations personnelles.
+    <br>Au cours de ce développement, j’ai découvert une vulnérabilité majeure dans le système d’annuaire de l’application.
+    <br>
+    <br>En analysant les réponses du serveur lors d’une recherche dans l’annuaire interne, j’ai remarqué la présence de champs non affichés dans l’interface utilisateur. Parmi eux, un identifiant numérique suspect nommé n_ssocial. Des vérifications externes m’ont confirmé qu’il s’agissait d’un numéro de sécurité sociale valide. Ce comportement indiquait que SmartRH renvoyait beaucoup plus d’informations que nécessaire.
+    <br>
+    <br>Pour comprendre l’origine de la faille, j’ai inspecté la fonction JavaScript responsable de la génération et du chiffrement des requêtes. J’ai alors instrumenté cette fonction via un code personnalisé pour afficher en clair les paramètres envoyés. Cette analyse m’a permis d’identifier les libellés internes correspondant à de nombreuses données personnelles.
+    <br>
+    <br>J’ai ensuite étendu l’exploration en modifiant la génération de la requête de recherche dans l’annuaire afin qu’elle inclue l’ensemble des libellés sensibles récupérés lors de la consultation de mon propre profil. Cette manipulation a révélé un accès complet, non filtré et non autorisé aux informations personnelles de tous les employés, parmi lesquelles :
+    <br>
+    <br>- numéro de sécurité sociale,
+    <br>- IBAN,
+    <br>- adresse postale,
+    <br>- numéro de téléphone,
+    <br>- montant du salaire,
+    <br>- informations sur les enfants et le conjoint (noms, dates de naissance, numéros de téléphone),
+    <br>- ainsi que divers documents associés au salarié.
+    <br>
+    <br>Cette faille permettait, en pratique, à n’importe quel utilisateur authentifié d’accéder à l’ensemble des données RH de l’entreprise.
+    <br>
+    <br>Conscient de la gravité de la situation, j’ai immédiatement documenté mes découvertes et les ai transmises à mon responsable, afin qu’il puisse les signaler à l’éditeur de SmartRH. Grâce à cette démarche, la faille a été confirmée puis corrigée en moins d’une semaine.
+  %}
+
+  {%PRODUCT-TEXT:drone2.jpg;Reverse-engineering et contrôle d’un drone via Python;
+    Développement d’une librairie Python de pilotage autonome d’un drone via reverse-engineering du protocole propriétaire. Analyse du trafic réseau avec Wireshark révélant une communication UDP non sécurisée. Mise en place d’un environnement d’émulation Android, exploitation d’une faille Wi-Fi via désauthentification (Aircrack-ng) et reprise de contrôle du drone depuis Python.;
+    Dans un objectif initial de développer une librairie Python permettant de piloter automatiquement un drone grand public, j’ai entrepris de comprendre et d’interagir directement avec son protocole de communication. Le drone pouvait être contrôlé uniquement via sa télécommande ou via une application Android en Wi-Fi, j’ai donc commencé par reproduire cet environnement sur PC grâce à l’émulateur Bluestacks. Une fois l’application installée et le PC connecté au réseau Wi-Fi du drone, j’ai pu vérifier que le contrôle fonctionnait depuis l’ordinateur.
+    <br><br>
+    La seconde étape consistait à automatiser totalement ce pilotage en Python. Pour cela, j’ai capturé le trafic réseau entre l’application et le drone à l’aide de Wireshark. L’analyse des paquets m’a révélé que toutes les commandes de contrôle (décollage, rotation, déplacement…) étaient transmises sous forme de trames UDP non chiffrées, rendant le protocole vulnérable à une injection de commandes. J’ai alors développé un script Python capable de reproduire ces trames et de les envoyer en boucle, ce qui m’a permis de prendre le contrôle du drone directement depuis Python.
+    <br><br>
+    Pour valider la sécurité du système et comprendre son comportement en situation « adversaire », j’ai poussé l’expérimentation plus loin. J’ai connecté mon téléphone au drone, fait décoller l’appareil à quelques centimètres, puis lancé Kali Linux sur mon PC. À l’aide d’Aircrack-ng, j’ai réalisé une attaque de désauthentification sur le réseau du drone, celui-ci n’autorisant qu’un seul appareil connecté à la fois. Une fois le smartphone expulsé, j’ai immédiatement reconnecté mon PC au réseau et repris le contrôle en Python, démontrant la facilité avec laquelle un tiers pourrait détourner l’appareil.
+    <br><br>
+    Ce projet m’a permis de combiner développement Python, analyse réseau, reverse-engineering de protocole, tests de sécurité offensive et exploitation de failles Wi-Fi afin de comprendre en profondeur les mécanismes de pilotage du drone et sa surface d’attaque.
+  %}
+
+  <div style="height: 110px;"><!-- space --></div>
+
+  <h1 id="about-me" class="arialroundedmt title">
+    À PROPOS DE MOI
+  </h1>
+
+  <p class="p-about">Développeur informatique, passionné depuis l’âge de 12 ans, j'ai progressivement acquis des compétences dans des domaines variés. Je maîtrise plusieurs langages et continue de me former activement en cybersécurité.</p>
+
+  <div style="background: linear-gradient(60deg, rgba(0,172,193,1) 0%, rgba(84,58,183,1) 100%);">
+
+    <!-- wave -->
+    <div>
+      <svg style="transform: scaleY(-1);margin-top: 150px;" class="waves"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28"
+        preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- Footer starts -->
+
+    <div class="content flex" style="background: transparent;">
+
+      <p style="color: white;font-size: 1.2em;text-align: center;display: inline-flex;">
+
+        <a target="_blank" rel="noopener noreferrer" href="mailto:contact@kmaindron.fr">
+          <svg xmlns="http://www.w3.org/2000/svg" class="svg-class svg-mel" viewBox="0 0 512 512">
+            <path
+              d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+          </svg>
+        </a>
+
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/kelian-m">
+          <svg xmlns="http://www.w3.org/2000/svg" class="svg-class svg-lnk" viewBox="0 0 448 512">
+            <path
+              d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+          </svg>
+        </a>
+
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Game-K-Hack">
+          <svg xmlns="http://www.w3.org/2000/svg" class="svg-class svg-git" viewBox="0 0 496 512">
+            <path
+              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+          </svg>
+        </a>
+
+        <!-- Curriculum vitæ | Kélian Maindron | 2023 -->
+      </p>
+    </div>
+  
+  </div>
+
+</body>
+
+<script src="./scripts/tailwindcss-3.3.5.min.js"></script>
+<script src="./scripts/alpine.min.js" defer></script>
+
+<script src="./scripts/utils.js"></script>
+<script src="./scripts/toggle_detail.js"></script>
+<script src="./scripts/card.js"></script>
+<script src="./scripts/item.js"></script>
+<script src="./scripts/center_of_interest.js"></script>
+<script>fetch("metrics").then()</script>
+
+</html>

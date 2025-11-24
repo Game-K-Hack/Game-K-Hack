@@ -1,0 +1,9 @@
+# Activer le moteur de réécriture
+RewriteEngine On
+
+# Forcer HTTPS sur ce sous-domaine
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Rediriger toutes les requêtes vers ipinfo.io/json
+RewriteRule ^.*$ https://gentle-firefly-6c18.hack-h.workers.dev/ [R=302,L]
