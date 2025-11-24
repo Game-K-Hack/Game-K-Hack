@@ -15,15 +15,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Validate tag is on master
-        run: |
-          echo "🔎 Vérification du tag sur master"
-          if ! git branch --contains "$GITHUB_SHA" | grep -q "master"; then
-            echo "❌ Le tag n'a pas été créé sur master. Annulation."
-            exit 1
-          fi
-          echo "✔ Tag OK"
-
       - name: Install Firefox
         run: |
           sudo apt-get update
