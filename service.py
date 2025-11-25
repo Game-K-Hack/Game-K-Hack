@@ -48,6 +48,7 @@ def get_credly_badges() -> dict:
 
 def get_rootme_stat() -> dict:
     options = Options()
+    options.binary_location = "/usr/local/bin/firefox"
     options.add_argument("--headless")
     driver = webdriver.Firefox(options=options)
     url = "https://www.root-me.org/" + os.getenv("ROOTME_USER")
