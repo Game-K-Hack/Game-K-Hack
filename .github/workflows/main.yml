@@ -10,45 +10,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # --- CODE SOURCE ---
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Prepare tools
+      # --- ENV SELENIUM SÛR ---
+      - name: Install Firefox + Geckodriver (APT, sans snap)
         run: |
+          sudo add-apt-repository ppa:mozillateam/ppa -y
+          echo '
+          Package: *
+          Pin: origin ppa.launchpadcontent.net
+          Pin-Priority: 1001
+          ' | sudo tee /etc/apt/preferences.d/mozilla
           sudo apt-get update
-          # installer outils de base (wget, tar, bzip2, unzip, jq)
-          sudo apt-get install -y wget tar bzip2 unzip ca-certificates curl
-
-      - name: Install official Firefox (stable binary)
-        run: |
-          # forcer le nom de fichier de sortie pour éviter les noms contenant '?'
-          wget -O firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
-          # extraire (le fichier est en bzip2)
-          tar -xjf firefox.tar.bz2
-          sudo mv firefox /opt/firefox
-          # lier pour que geckodriver puisse trouver un binaire classique
-          sudo ln -sf /opt/firefox/firefox /usr/local/bin/firefox
-          /usr/local/bin/firefox --version
-
-      - name: Install Geckodriver (robuste, sans jq requirement)
-        run: |
-          # Récupérer la dernière release tag (sans dépendre de jq)
-          GECKO_VERSION=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest \
-            | grep -oP '"tag_name"\s*:\s*"\K(.*?)(?=")')
-          echo "Using geckodriver tag: $GECKO_VERSION"
-          wget -O geckodriver.tar.gz "https://github.com/mozilla/geckodriver/releases/download/$GECKO_VERSION/geckodriver-$GECKO_VERSION-linux64.tar.gz"
-          tar -xzf geckodriver.tar.gz
-          chmod +x geckodriver
-          sudo mv geckodriver /usr/local/bin/
+          sudo apt-get install -y firefox firefox-geckodriver
+          firefox --version
           geckodriver --version
 
+      # --- PYTHON ---
       - name: Install Python dependencies
         run: |
           pip install -r requirements.txt
 
-      - name: Run make.py (generate HTML + images)
+      # --- GÉNÉRATION INDEX + IMAGES ---
+      - name: Run make.py
         env:
           CREDLY_ID: ${{ secrets.CREDLY_ID }}
           ROOTME_USER: ${{ secrets.ROOTME_USER }}
@@ -56,63 +44,51 @@ jobs:
         run: |
           python maker.py
 
-      # Ajout automatique des images téléchargées
+      # --- AJOUT DES IMAGES TÉLÉCHARGÉES ---
       - name: Commit downloaded images
         run: |
-          echo "📁 Vérification des images téléchargées…"
-
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          # Ajouter uniquement les images
           git add images/ || true
 
           if ! git diff --cached --quiet; then
-            echo "🖼️ Nouvelles images détectées → commit + push"
+            echo "✔ commit images téléchargées"
             git commit -m "Add downloaded images [CI]"
             git push
           else
-            echo "✔ Aucune nouvelle image"
+            echo "✔ aucune nouvelle image"
           fi
 
-      # Préparer les fichiers pour l’upload FTPS
-      - name: Build deployment folder
+      # --- DOSSIER FINAL ---
+      - name: Prepare deployment folder
         run: |
           mkdir dist
-          cp -r . dist/
 
-          # Supprimer les fichiers à ne PAS uploader
-          rm -f dist/maker.py
-          rm -f dist/service.py
-          rm -f dist/README.md
-          rm -f dist/requirements.txt
-          rm -f dist/model.html
-          rm -f dist/.gitignore
-          rm -rf dist/.github
-          rm -rf dist/.git
-          rm -rf dist/__pycache__
+          # copier tout sauf fichiers interdits
+          rsync -av . dist \
+            --exclude=".git" \
+            --exclude=".github" \
+            --exclude="__pycache__" \
+            --exclude="maker.py" \
+            --exclude="service.py" \
+            --exclude="README.md" \
+            --exclude="model.html" \
+            --exclude="requirements.txt"
 
-          echo "📦 Dossier dist/ préparé pour le déploiement"
-
-      # Upload FTPS (tous les fichiers récursivement)
-      - name: Upload all files via FTP
+      # --- UPLOAD FTPS ---
+      - name: Upload via FTPS
         env:
           FTP_HOST: ${{ secrets.FTP_HOST }}
           FTP_USER: ${{ secrets.FTP_USER }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
           FTP_TARGET_PATH: ${{ secrets.FTP_TARGET_PATH }}
         run: |
-          echo "📤 Upload FTPS…"
+          echo "🔐 Déploiement FTPS vers $FTP_HOST..."
 
-          find dist -type f | while read file; do
-            relative_path="${file#dist/}"
-            remote_path="$FTP_TARGET_PATH/$relative_path"
+          curl --ftp-ssl --user "$FTP_USER:$FTP_PASSWORD" \
+            --ftp-create-dirs \
+            -T "{dist/**}" \
+            "ftps://$FTP_HOST/$FTP_TARGET_PATH/"
 
-            echo "→ Upload : $relative_path"
-
-            curl --ftp-ssl -T "$file" \
-              --user "$FTP_USER:$FTP_PASSWORD" \
-              "ftps://$FTP_HOST/$remote_path"
-          done
-
-          echo "✔ Déploiement terminé"
+          echo "✔ Upload terminé"
