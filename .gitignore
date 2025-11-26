@@ -2,3 +2,4 @@ __pycache__
 .env
 index.html
 .vscode
+.venv

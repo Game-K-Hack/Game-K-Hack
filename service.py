@@ -17,6 +17,7 @@ TRYHACKME_URL_PROFILE = "https://tryhackme.com/p/" + os.getenv("TRYHACKME_USERNA
 ROOTME_URL_PROFILE = "https://www.root-me.org/" + os.getenv("ROOTME_USER")
 
 def get_credly_badges() -> dict:
+    print("[WAIT] get_credly_badges")
     def __request__(url) -> dict:
         return requests.get(url, headers={
                 "User-Agent": UserAgent().firefox, 
@@ -37,6 +38,7 @@ def get_credly_badges() -> dict:
             next_url = False
             break
 
+    print("[OK] get_credly_badges")
     return [{
         "name": elm["badge_template"]["name"], 
         "description": elm["badge_template"]["description"], 
@@ -47,19 +49,23 @@ def get_credly_badges() -> dict:
     } for elm in data]
 
 def get_rootme_stat() -> dict:
+    print("[WAIT] get_rootme_stat")
     options = Options()
     options.add_argument("--headless")
     driver = webdriver.Firefox(options=options)
-    url = "https://www.root-me.org/" + os.getenv("ROOTME_USER")
+    print("[DEBUG] webdriver started")
+    url = "https://www.root-me.org/" + os.getenv("ROOTME_USER") + "?lang=fr"
     driver.get(url)
+    print("[DEBUG] webdriver go to url")
 
     try:
         # Attendre que l'élément #main soit présent dans le DOM
-        main = WebDriverWait(driver, 10).until(
+        main = WebDriverWait(driver, 20).until(
             EC.presence_of_element_located((By.ID, "main"))
         )
         # Attendre que le tableau soit chargé
         table_rows = main.find_elements(By.CSS_SELECTOR, "table tbody tr")
+        print("[TRACE] len of table_rows:", str(len(table_rows)))
 
         if len(table_rows) >= 3:
             # Récupérer le lien dans la troisième ligne
@@ -92,6 +98,7 @@ def get_rootme_stat() -> dict:
     return profile_stat, stat
 
 def get_thm_badges_and_rooms() -> tuple[int, int, int, list[dict], list[dict], list[dict]]:
+    print("[WAIT] get_thm_badges_and_rooms")
     user_profile = requests.get(
         "https://tryhackme.com/api/v2/public-profile?username=" + os.getenv("TRYHACKME_USERNAME"), 
         headers = { "Accept": "application/json" }
@@ -158,6 +165,8 @@ def get_thm_badges_and_rooms() -> tuple[int, int, int, list[dict], list[dict], l
             content = requests.get(i["url"]).content
             with open("./images/" + i["name"] + ".png", "wb") as image:
                 image.write(content)
+
+    print("[OK] get_thm_badges_and_rooms")
 
     return (
         rank, level, completed_rooms_number, badges_number, 
